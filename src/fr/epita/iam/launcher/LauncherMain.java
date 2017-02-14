@@ -24,23 +24,27 @@ public class LauncherMain {
 	 * @throws SQLException 
 	 */
 	public static void main(String[] args) throws IOException, SQLException {
-		System.out.println("Hello, welcome to the IAM application");
+		System.out.println("*************************************************");
+		System.out.println("Hello, welcome to the IAM application by PUTTASWAMY_Shivakumar");
 		Scanner scanner = new Scanner(System.in);
 		dao = new JDBCIdentity();
 		
 		
 		
 		//authentication
-		System.out.println("Please enter username");
+		System.out.println("For Admin AUTHENTICATION PROCESS");
+		System.out.println("Please enter your username");
 		String login = scanner.nextLine();
-		System.out.println("Please enter password");
+		System.out.println("Please enter your password");
 		String password = scanner.nextLine();
 		
 		if(!dao.validate(login, password)){
 			scanner.close();
 			return;
 		}
+		System.out.println("*************************************************");
 		System.out.println("You're authenticated");
+		
 		boolean flag=true;
 		while(flag) {
 			// menu
